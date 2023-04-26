@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: sample-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loop
+  template:
+    metadata:
+      labels:
+        app: loop
+    spec:
+      containers:
+        - name: container
+          image: 'busybox:latest'
+          command:
+            - sleep
+            - infinity
+          resources: {}
