@@ -9,7 +9,7 @@ spec:
     name: webserver
     weight: 100
   port:
-    targetPort: 8080
+    targetPort: 80
   tls:
     termination: edge
     insecureEdgeTerminationPolicy: Allow
