@@ -5,7 +5,7 @@ metadata:
   labels:
     app.kubernetes.io/instance: 2-webserver
   annotations:
-    haproxy.router.openshift.io/set-forwarded-headers: append
+    haproxy.router.openshift.io/set-forwarded-headers: replace
 spec:
   host: webserver-api-demo.apps.ocp.superjkdevops.com.pl
   to:
