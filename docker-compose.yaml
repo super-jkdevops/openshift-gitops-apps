@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  proxy:
+    image: ocnexus-ref01.fortisbank.com.pl:18079/nginx:stable
+    volumes:
+      - ./conf/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./conf/ssl:/etc/nginx/ssl:ro
+      - ./logs:/opt/logs:rw
+    ports:
+      - 8888:443
