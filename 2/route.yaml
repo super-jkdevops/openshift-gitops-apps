@@ -2,6 +2,58 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: webserver
+  namespace: demo
+  uid: 060f2879-0ffd-4e91-86ca-c981dbdedd45
+  resourceVersion: '1916329'
+  creationTimestamp: '2023-05-04T13:16:06Z'
+  labels:
+    app.kubernetes.io/instance: 2-webserver
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"route.openshift.io/v1","kind":"Route","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"2-webserver"},"name":"webserver","namespace":"demo"},"spec":{"host":"webserver-demo.apps.ocp.superjkdevops.com.pl","port":{"targetPort":8080},"tls":{"insecureEdgeTerminationPolicy":"Allow","termination":"edge"},"to":{"kind":"Service","name":"webserver","weight":100},"wildcardPolicy":"None"}}
+    openshift.io/host.generated: 'true'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2023-05-04T13:16:06Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:labels':
+            .: {}
+            'f:app.kubernetes.io/instance': {}
+        'f:spec':
+          'f:port':
+            .: {}
+            'f:targetPort': {}
+          'f:tls':
+            .: {}
+            'f:insecureEdgeTerminationPolicy': {}
+            'f:termination': {}
+          'f:to':
+            'f:kind': {}
+            'f:name': {}
+            'f:weight': {}
+          'f:wildcardPolicy': {}
+    - manager: openshift-router
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2023-05-04T13:16:06Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:ingress': {}
+      subresource: status
+    - manager: argocd-controller
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2023-05-04T13:19:58Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            'f:kubectl.kubernetes.io/last-applied-configuration': {}
 spec:
   host: webserver-demo.apps.ocp.superjkdevops.com.pl
   to:
